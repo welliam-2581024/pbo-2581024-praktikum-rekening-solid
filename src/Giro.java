@@ -14,10 +14,10 @@ public class Giro extends Rekening {
     @Override
     public boolean tarik (int jumlah) {
         if (jumlah <= 0 || saldo - jumlah < -batasOverdraft) {
-            saldo -= jumlah;
-            return true;
+            return false;
         }
-        return false;
+        saldo -= jumlah;
+        return true;
     }
 
     @Override
