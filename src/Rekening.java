@@ -13,6 +13,8 @@ public abstract class Rekening {
 
     public abstract int biayaAdminBulanan();
 
+    public abstract String keterangan();
+
     public int potongBiayaAdmin() {
         int biaya = biayaAdminBulanan();
         saldo -= biaya;
@@ -45,10 +47,6 @@ public abstract class Rekening {
         }
         saldo -= jumlah;
         return true;
-    }
-
-    public void cetakInfo() {
-        System.out.printf("%s | %-6s | %12s%n", nomor, pemilik, formatRupiah(saldo));
     }
 
     protected static String formatRupiah(int angka) {
