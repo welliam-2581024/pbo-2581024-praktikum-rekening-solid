@@ -40,7 +40,7 @@ public abstract class Rekening {
         saldo+= jumlah;
         return true;
     }
-
+    // Kontrak tarik: true kalau berhasil, false kalau gagal, tidak pernah melempar exception.
     public boolean tarik(int jumlah) {
         if (jumlah <= 0 || jumlah > saldo) {
             return false;
